@@ -2,6 +2,9 @@
 
 ## General Reading
 
+> FIXME
+write brief summary of these things
+
 [WCO news October 2018](https://mag.wcoomd.org/uploads/2018/10/WCO_News_87.pdf)
 
 [Can Blockchain revolutionise international trade?](https://www.wto.org/english/res_e/booksp_e/blockchainrev18_e.pdf)
