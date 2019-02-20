@@ -1,5 +1,14 @@
 # Survey of Blockchain Based Approaches to Managing International Trade Documentation
 
+## General Reading
+
+[WCO news October 2018](https://mag.wcoomd.org/uploads/2018/10/WCO_News_87.pdf)
+
+[Can Blockchain revolutionise international trade?](https://www.wto.org/english/res_e/booksp_e/blockchainrev18_e.pdf)
+
+[UNECE Blockchain Whitepaper](https://uncefact.unece.org/display/uncefactpublicreview/Public+Review%3A+Blockchain+Whitepaper)
+
+
 ## Certificates of Origin 
 
 ### Singapore
@@ -57,22 +66,11 @@ https://www.i2i-infinity.co.uk/blog/post/15667
 [TradeLens](https://www.tradelens.com/)
 
 
-## Proof of Existence
+## As yet uncollated list of possibly interesting/relevant things
 
 https://www.proofofexistence.com/
 
 https://digitalcurrency.unic.ac.cy/free-introductory-mooc/self-verifiable-certificates-on-the-bitcoin-blockchain/academic-certificates-on-the-blockchain/
-
-## General Reading
-
-[WCO news October 2018](https://mag.wcoomd.org/uploads/2018/10/WCO_News_87.pdf)
-
-[Can Blockchain revolutionise internatinal trade?](https://www.wto.org/english/res_e/booksp_e/blockchainrev18_e.pdf)
-
-[UNECE Blockchain Whitepaper](https://uncefact.unece.org/display/uncefactpublicreview/Public+Review%3A+Blockchain+Whitepaper)
-
-## As yet uncollated list of possibly interesting/relevant things
-
 
 https://iccwbo.org/resources-for-business/certificates-of-origin/certificates-origin-verification-website/
 
