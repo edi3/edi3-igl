@@ -2,7 +2,7 @@
 
 ## Certificates of Origin 
 
-#### Singapore
+### Singapore
 
   - partnership between Singapore International Chamber of Commerce and vCargo Cloud
   - retains paper certificates
@@ -16,7 +16,7 @@ https://www.maritime-executive.com/article/certificate-of-origin-blockchain-plat
 
 http://fintechnews.sg/19677/blockchain/blockchain-based-e-certificate-of-origin-singapore-chamber-of-commerce/
 
-#### Kenya
+### Kenya
 
 - same system as Singapore (vCargo Cloud)
 
@@ -26,7 +26,7 @@ https://www.gtreview.com/news/africa/blockchain-based-certificates-of-origin-com
 
 https://cryptotvplus.com/kenya-gets-blockchain-based-e-certificate-of-origin/
 
-#### United States
+### United States
 
 - Piloting blockchain system to verify NAFTA and CAFTA certificates of origin 
 
@@ -34,7 +34,7 @@ https://cryptotvplus.com/kenya-gets-blockchain-based-e-certificate-of-origin/
 
 https://home.kpmg/xx/en/home/insights/2018/08/tnf-united-states-cbp-blockchain-testing-for-certificate-of-origin-verification.html
 
-#### United Kingdom
+### United Kingdom
 
   - certificate issued using Bristol Chamber of Commerce's e-z cert system
   - looks like the technology parter for the prototype (i2i infinity) are the providers of e-z Cert
