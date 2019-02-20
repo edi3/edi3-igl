@@ -1,5 +1,5 @@
 ---
-title: "edi3 Inter Customs Ledger 1.0 Specification"
+title: "edi3 Inter Customs Ledger 0.1.0 Specification"
 specID: "icl/1"
 status: "![raw](http://rfc.unprotocols.org/spec:2/COSS/raw.svg)"
 editors: "[Chris Gough](https://github.com/monkeypants)"
