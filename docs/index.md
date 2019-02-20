@@ -70,44 +70,29 @@ This goes to the question of what content of a given document is available on-ch
 ## Design Goals
 
 **Avoid proliferation of ledgers**
+> FIXME
+i.e. reduce burdon on parties wishing to join network
+
 **Maintain privacy of document content**
+> FIXME
+i.e. a node on the network may not be authorised to view the content of a document
+
 **Collect meaningful data about the use of a Document**
-
-
-- any authorised body should be able to run a node
-- participating as a node should not necessarily give access to the content of a message
-- importers and exports must be able to present a certificate to an inspecting authority and for the authority to be able to validate it
-- there must be some mechanism to prevent double spend of a document
-
-What is a certificate (document)? 
-- a thing with state that allows a party to take some action
-- a digital asset which can be traded for some action
-
+> FIXME
+i.e. some state management to prevent double spend and track documents etc
 
 
 ## Future Directions
+> FIXME
+increate breadth and depth with interledger protocols
 
-For example, a shipment of orchids from China to Australia might require the following documents to be presented: 
-- A Certificate of Origin presented to the importing customs authority as part of an application for preferential tariff treatment under ChAFTA.
-- A CITES Export permit presented to the exporting customs authority to authorise export of a CITES product
-  - The same permit presented to the CITES Management Authority of Australia in order to grant an import permit
-- A CITES Import permit presented to Australian Customs in order to clear the Import
-- Bill of layding or air waybill
 
 These paper documents are inherently prone to loss, alteration and forgery. The aim of the Inter Customs Ledger is to provide a mechanism which allows interested parties to determine the validity of a given shipment document. 
 
 
-## Goals
-- any interested customs authority can participate in the ICL
-- private or commercial in confidence data required by a document specification is only visible to authorised parties
-- a party wishing to participate should not need to maintain multiple systems to transact with each of their trading partners
-- it must be possible for an importer or exporter to present a document in some format to a customs authority and for the customs authority to confirm the validity of the document
-- it must allow for a document to be invalidated - either because it has been exhausted, or because it has been cancelled.
-
-
-
 ## Status
 
+This document is currently focussed toward providing enough background content to inform discussions on elaborating the design of an Inter Customs Ledger. 
 
 
 ## Glossary
@@ -160,10 +145,3 @@ in this document are to be interpreted as described in RFC 2119.
 
 
 ## State Lifecycle
-
-
- 
-# Related Material
-
- * 
- * 
