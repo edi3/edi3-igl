@@ -2,8 +2,8 @@
 title: "edi3 Inter Customs Ledger 0.1.0 Specification"
 specID: "icl/1"
 status: "![raw](http://rfc.unprotocols.org/spec:2/COSS/raw.svg)"
-editors: "[Chris Gough](https://github.com/monkeypants)"
-contributors: "[Richard Spellman](https://github.com/arpentnoir)"
+editors: "[Richard Spellman](https://github.com/arpentnoir)"
+contributors: 
 ---
 
 ## Introduction
