@@ -45,7 +45,8 @@ customs authority - grants preferential tariff treatment
 > as well as all documents required for a more complex scenario, maybe orchids (certificate of origin, CITES, phytosanitary...) as well as full list of parties involved
 
 #### Open Questions
-**What is the relationship between a party running a node and a party authorised to view the contents of a Document?**
+
+##### What is the relationship between a party running a node and a party authorised to view the contents of a Document?
 This goes to the question of what content of a given document is available on-chain. Some options are: 
 
 > FIXME
@@ -54,17 +55,17 @@ This goes to the question of what content of a given document is available on-ch
 - document content is published and only a reference to the document and it's hash is on-chain
 - all document content is on chain and not encrypted (being a node is the same as having authority to view document details)
 
-**Should an Inter Customs Ledger manage the state lifecyle of a Document?**
+##### Should an Inter Customs Ledger manage the state lifecyle of a Document?
 
-**What is a Document in the context of the Inter Customs Ledger?**
+##### What is a Document in the context of the Inter Customs Ledger?
   - a thing added to the chain by an authorised body which has state and allows some party to take some action dependant on that state
   - a digital asset granted to a party that allows that party to trade the asset for some service
 
-**What is the appropriate 'chain of custody' of a document in the context of the Inter Customs Ledger?**
+##### What is the appropriate 'chain of custody' of a document in the context of the Inter Customs Ledger?
   - export customs to import customs
   - authorised body to exporter to importer to import customs
 
-**How should the ICL function in the context of an existing legislated paper based process?**
+##### How should the ICL function in the context of an existing legislated paper based process?
 
 
 ## Design Goals
