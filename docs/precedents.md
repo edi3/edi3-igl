@@ -73,6 +73,9 @@ https://www.i2i-infinity.co.uk/blog/post/15667
 
 ## As yet uncollated list of possibly interesting/relevant things
 
+> FIXME  
+classify and summarise
+
 https://www.proofofexistence.com/
 
 https://digitalcurrency.unic.ac.cy/free-introductory-mooc/self-verifiable-certificates-on-the-bitcoin-blockchain/academic-certificates-on-the-blockchain/
