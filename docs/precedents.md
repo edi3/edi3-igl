@@ -11,7 +11,8 @@ write brief summary of these things
 
 [UNECE Blockchain Whitepaper](https://uncefact.unece.org/display/uncefactpublicreview/Public+Review%3A+Blockchain+Whitepaper)
 
-[Global Trade Single Window with Blockchain](../resources/13 February Project Webinar Kick-off Deck.pdf)
+[Global Trade Single Window with Blockchain](../resources/13%20February%20Project%20Webinar%20Kick-off%20Deck.pdf)
+
 
 ## Certificates of Origin 
 
