@@ -25,11 +25,6 @@ Phrase | Definition
 ## Introduction
 International trade clearance procedures require a number of documents to be presented to satisfy the requirements of a variety of agreements. For example, in order for an importer to gain preferential tariff treatment under a Free Trade Agreement, the importer must present a valid Certificate of Origin (issued to the exporter) which states that the goods being imported qualify as originating in the country which is party to the agreement. These processes are managed largely by the transfer of paper documents which are subject to loss, alteration and forgery. 
 
-
-> FIXME
-consise description of the problem that an ICL proposes to solve
-e.g. Clearance of shipments can be delayed because of uncertainty around accompanying documentation, causing signifant costs to bla bla bla... most important statement in document. 
-
 An Inter Customs Ledger is proposed as an apporach to the transfer of shipment related documents between customs agencies which is immediate, permanent and irrefutable.
 
 This document uses Certificates of Origin as the guiding use case for the initial specification, however it is intended that the Inter Customs Ledger should be generic and allow for the transfer of any shipment related documentation between authorised agencies. 
