@@ -54,14 +54,6 @@ The link below provides a number of resources which attempt to give an overview 
 > customs authority - grants preferential tariff treatment  
 
 
-#### Example Scenarios
-> FIXME  
-> provide step by step description of the end to end process for a simple scenario, and a more complex one, focussing on the creation and transfer of documents.   
-> Get full list of documents required for a simple case where only additional  
-> documentation beyond generic shipment documentation is a Certificate of Origin  
-> maybe a wine shipment?  
-> 
-> as well as all documents required for a more complex scenario, maybe orchids (certificate of origin, CITES, phytosanitary...) as well as full list of parties involved (e.g. Customs, CMA, Quarantine, CoC)  
 
 #### Open Questions
 
