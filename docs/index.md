@@ -24,8 +24,6 @@ Phrase | Definition
 
 ## Introduction
 International trade clearance procedures require a number of documents to be presented to satisfy the requirements of a variety of agreements. For example, in order for an importer to gain preferential tariff treatment under a Free Trade Agreement, the importer must present a valid Certificate of Origin (issued to the exporter) which states that the goods being imported qualify as originating in the country which is party to the agreement. These processes are managed largely by the transfer of paper documents which are subject to loss, alteration and forgery. 
-> FIXME
-there should be some text here describing the financial consequences of the last statement above
 
 
 > FIXME
