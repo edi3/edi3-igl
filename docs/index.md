@@ -38,15 +38,6 @@ The link below provides a number of resources which attempt to give an overview 
 
 [Survey of Blockchain Based Approaches to Managing International Trade Documentation](precedents.md)
 
-#### Users
-> FIXME  
-> list of parties and their roles etc. maybe just sticking to CoO process initially?  
-> exporter - applies for certificate  
-> authorised body - issues certificate  
-> importer - applies for preferential tariff treatment, etc  
-> customs authority - grants preferential tariff treatment  
-
-
 
 #### Open Questions
 
