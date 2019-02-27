@@ -24,13 +24,6 @@ Phrase | Definition
 
 ## Introduction
 International trade clearance procedures require a number of documents to be presented to satisfy the requirements of a variety of agreements. For example, in order for an importer to gain preferential tariff treatment under a Free Trade Agreement, the importer must present a valid Certificate of Origin (issued to the exporter) which states that the goods being imported qualify as originating in the country which is party to the agreement. These processes are managed largely by the transfer of paper documents which are subject to loss, alteration and forgery. 
-> FIXME
-there should be some text here describing the financial consequences of the last statement above
-
-
-> FIXME
-consise description of the problem that an ICL proposes to solve
-e.g. Clearance of shipments can be delayed because of uncertainty around accompanying documentation, causing signifant costs to bla bla bla... most important statement in document. 
 
 An Inter Customs Ledger is proposed as an apporach to the transfer of shipment related documents between customs agencies which is immediate, permanent and irrefutable.
 
@@ -45,96 +38,12 @@ The link below provides a number of resources which attempt to give an overview 
 
 [Survey of Blockchain Based Approaches to Managing International Trade Documentation](precedents.md)
 
-#### Users
-> FIXME  
-> list of parties and their roles etc. maybe just sticking to CoO process initially?  
-> exporter - applies for certificate  
-> authorised body - issues certificate  
-> importer - applies for preferential tariff treatment, etc  
-> customs authority - grants preferential tariff treatment  
 
-
-#### Example Scenarios
-> FIXME  
-> provide step by step description of the end to end process for a simple scenario, and a more complex one, focussing on the creation and transfer of documents.   
-> Get full list of documents required for a simple case where only additional  
-> documentation beyond generic shipment documentation is a Certificate of Origin  
-> maybe a wine shipment?  
-> 
-> as well as all documents required for a more complex scenario, maybe orchids (certificate of origin, CITES, phytosanitary...) as well as full list of parties involved (e.g. Customs, CMA, Quarantine, CoC)  
-
-#### Open Questions
-
-##### What is the relationship between a party running a node and a party authorised to view the contents of a Document?
-This goes to the question of what content of a given document is available on-chain. Some options are: 
-
-> FIXME  
-> elaborate on each of the options below  
-> 1. all document content is on-chain and encrypted  
-> 2. document content is published by the issuing authority (who manages access) and only a reference to the document and it's hash is on-chain  
-> 3. all document content is on chain and not encrypted (being a node is the same as having authority to view document details)  
-
-##### Should an Inter Customs Ledger manage the state lifecyle of a Document?
-
-##### What is a Document in the context of the Inter Customs Ledger?
-> FIXME  
-discuss these two conceptual approaches:   
-> 1. a thing added to the chain by an authorised body which has state and allows some party to take some action dependant on that state?  
-> 2. a digital asset granted to a party that allows that party to trade the asset for some service?  
-
-##### What is the appropriate 'chain of custody' of a document in the context of the Inter Customs Ledger?
-> FIXME  
-e.g.   
-export customs -> import customs  
-authorised body -> exporter -> importer -> import customs  
-
-##### How should the ICL function in the context of an existing legislated paper based process?
-> FIXME  
-other projects have maintained paper certificates and implemented print management solution and QR code for validation  
-review chapter 12 and artice 4.6 of ChAFTA for reference  
-
-## Design Goals
-
-**Avoid proliferation of ledgers**
-> FIXME  
-i.e. reduce burdon on parties wishing to join network  
-
-**Maintain privacy of document content**
-> FIXME  
-i.e. a node on the network may not be authorised to view the content of a document  
-
-**Collect meaningful data about the use of a Document**
-> FIXME  
-i.e. some state management to prevent double spend and track documents etc  
-
-
-## Future Directions
-> FIXME  
-increase breadth and depth covered with interledger protocols.  
-e.g. trade finance related processes may be managed on some other ledger which might need to reference the ICL for validation of the existance of a CoO.  
-or  
-before a certificate of origin is issued, some other ledger may track the provenance of a product and it's purchase by the exporter, opening the possibility of execution of smart contract for issuance of CoO  
-
-
-This service depends on - TBA.
-
-The TBA specification depends on this document. Note, TBA.
- 
 ## Licence
 
-Copyright (c) 2018 the Editor and Contributors. All rights reserved.
+All material published on edi3.org including all parts of this specification are the intellectual property of the UN as per the [UN/CEFACT IPR Policy](https://www.unece.org/fileadmin/DAM/cefact/cf_plenary/plenary12/ECE_TRADE_C_CEFACT_2010_20_Rev2E_UpdatedIPRpolicy.pdf).
 
-This Specification is free software; you can redistribute it and/or modify it under the
-terms of the GNU General Public License as published by the Free Software Foundation; 
-either version 3 of the License, or (at your option) any later version.
-
-This Specification is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with this program;
-if not, see [http://www.gnu.org/licenses](http://www.gnu.org/licenses).
-
+This Specification is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. See http://www.gnu.org/licenses.
  
 ## Change Process
 
