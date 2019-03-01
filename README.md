@@ -1,8 +1,8 @@
 # edi3 Inter Customs Ledger Specification
 
- * [Version 0.1.0](/docs/0.1.0/index.md)
+ * [Working Draft](/docs/index.md)
  
-Specification: [Inter Customs Ledger 0.1.0](http://edi3.org/specs/edi3-icl/0.1.0/)
+Specification: [Inter Customs Ledger Working Draft](http://edi3.org/specs/edi3-icl/master/)
 
 Community discussion/support: [edi3.org](http://edi3.org)
 
