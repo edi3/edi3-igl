@@ -82,10 +82,9 @@ in this document are to be interpreted as described in RFC 2119.
 ## Architectural Principles
 
 
-
 |ID||Principle|Rationale|
-|--|------_---|---------|
-|P1|The ICL should avoid bleeding any local regulatory complexities into cross-border processes|A strong separation between local complexity and cross border document exchange is essential for scalability. The ICL specification must be as simple as possible in order for updake to scale. The ICL metamodel is likely to be little more than a list of notarised documents.|
+|--|----------|---------|
+|P1|The ICL should avoid bleeding any local regulatory complexities into cross-border processes| A strong separation between local complexity and cross border document exchange is essential for scalability. The ICL specification must be as simple as possible in order for updake to scale. The ICL metamodel is likely to be little more than a list of notarised documents.|
 |P2|The specification must support implementations over multiple different distributed ledger types & networks|A single global uber-ledger would need to pick a technology winner, would restrict the ability to intruduce non breaking extensions, would present a high value attack target, and is unlilkely to be supported by every nation. The ICL will need to specify an abstract "message API" that can interact with multiple ledgers. A "routing API" will also be needed so that implementations can lookup which ledger & protocol to apply for a given interacition|
 |P3|The ICL should leverage the unique position of national regulators to complement rather than compete with commercial platforms| Customs authorities enjoy a unique postion as the single convergence point for all imports to and exports from a country. That allows an intercustomes ledger to easily achieve complete coverage of a bilateral or multilateral trading relationship. However regulators are not natural innovators. The ideal ICL will provide a non-comptetitive platform that leverages the position to regualators to the benefit of their constituents whilst allowing comemrcial innovation to flourish|
 |P4|The ICL should not *require* a business to provide anything more than their local regulatory obligations demand. Any extra data should be provided by business only if there is a sufficient incentive to do so.| Regulators cannot, and should not, demand more than the local regulations require. ICL implementations should define the value propisition for every document that exceeds the regulatory minimum.|
