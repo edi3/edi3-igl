@@ -109,15 +109,15 @@ The future state diagram shows the relationship between the ICL and three other 
 |ID|Requirement|Solution Links|
 |--|-----------|--------------|
 |R1|The on-chain ICL data model MUST be simple enough to support any cross border use case. |Link to ICL on-chain data model |
-|R2|The on-chain ICL data SHOULD not contain sensitive or private information|link to threat-risk analysis |
-|R3|A message on the ICL SHOULD provide a mechanism for discovering the full content of the document to which it relates| | |Link to discovery protocol|
-|R4|Trade documents referenced by the ICL SHOULD be accessible via a consistent API|Link to Repository API|
+|R2|The on-chain ICL data SHOULD not contain sensitive or private information |link to threat-risk analysis |
+|R3|A message on the ICL SHOULD provide a mechanism for discovering the full content of the document to which it relates| |Link to discovery protocol|
+|R4|Trade documents referenced by the ICL SHOULD be accessible via a consistent API |Link to Repository API|
 |R5|The ICL SHOULD NOT require that the user have any knowledge of the specific leger technology used (ehterium, hyperledger, etc) |link to Message API|
 |R6|The ICL SHOULD NOT assume that the user knows which ledger and which protocol to use in order to exchange a specific document type between two countries.| Link to Routing API |
-|R7|Any Regulator SHOULD be able to participate in the ICL by hosting an ICL Message API that integrates with one or more ledgers| |
-|R8|Participating in the network by hosting a Message API SHOULD NOT automatically grant access to the content of a document| |
-|R4|The ICL MUST provide a mechanism for preventing an importer or exporter from re-using a document which is intended to have a single use| |
-|R5|The ICL MUST provide some mechanism for asserting the validity of a document presented by an importer or exporter | |
-|R6|The ICL MUST provide some mechanism for invalidating a Document| |
-|R7|The ICL MUST provide some mechanism for specifying who can perform certain actions with respect to a Document| |
+|R7|Any Regulator SHOULD be able to participate in the ICL by hosting an ICL Message API that integrates with one or more ledgers| link to participation rules|
+|R8|Participating in the network by hosting a Message API SHOULD NOT automatically grant access to the content of a document|link to access control rules |
+|R9|The ICL MUST provide a mechanism for preventing an importer or exporter from re-using a document which is intended to have a single use|Link to document state lifecycle? |
+|R10|The ICL MUST provide some mechanism for asserting the validity of a document presented by an importer or exporter | Link to notary / verification API|
+|R11|The ICL MUST provide some mechanism for invalidating a Document| |
+|R12|The ICL MUST provide some mechanism for specifying who can perform certain actions with respect to a Document| |
 
