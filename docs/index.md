@@ -36,15 +36,6 @@ This document uses Certificates of Origin as the guiding use case for the initia
 
 ## Glossary
 
-Phrase | Definition
------------- | -------------
-| Authorised Body| In this document, the term Authorised Body is used to denote an organisation which has authority to issue some Document. e.g. A Chamber of Commerce which issues Certificate of Origin under some FTA, a CITES Management Authority which issues CITES Permits, etc.|
-
-| ICL | This "Intercustoms Ledger" specification |
-| Node | A device on the Inter Customs Ledger network which has full visibility of the entire ledger and contriibutes to the integrity of the ledger by implementing a Consensus Algorithm |
-
-## Glossary
-
 To-do : replace this section with a simple link to role definitions in the dictionary specification
 
 |Term|Description|
@@ -110,14 +101,44 @@ The future state diagram shows the relationship between the ICL and three other 
 |--|-----------|--------------|
 |R1|The on-chain ICL data model MUST be simple enough to support any cross border use case. |Link to ICL on-chain data model |
 |R2|The on-chain ICL data SHOULD not contain sensitive or private information |link to threat-risk analysis |
-|R3|A message on the ICL SHOULD provide a mechanism for discovering the full content of the document to which it relates| |Link to discovery protocol|
+|R3|A message on the ICL SHOULD provide a mechanism for discovering the full content of the document to which it relates|Link to discovery protocol|
 |R4|Trade documents referenced by the ICL SHOULD be accessible via a consistent API |Link to Repository API|
 |R5|The ICL SHOULD NOT require that the user have any knowledge of the specific leger technology used (ehterium, hyperledger, etc) |link to Message API|
 |R6|The ICL SHOULD NOT assume that the user knows which ledger and which protocol to use in order to exchange a specific document type between two countries.| Link to Routing API |
 |R7|Any Regulator SHOULD be able to participate in the ICL by hosting an ICL Message API that integrates with one or more ledgers| link to participation rules|
 |R8|Participating in the network by hosting a Message API SHOULD NOT automatically grant access to the content of a document|link to access control rules |
-|R9|The ICL MUST provide a mechanism for preventing an importer or exporter from re-using a document which is intended to have a single use|Link to document state lifecycle? |
+|R9|The ICL MUST provide a mechanism for preventing an importer or exporter from re-using a document which is intended to have a single use|Link to smart contract patterns |
 |R10|The ICL MUST provide some mechanism for asserting the validity of a document presented by an importer or exporter | Link to notary / verification API|
-|R11|The ICL MUST provide some mechanism for invalidating a Document| |
-|R12|The ICL MUST provide some mechanism for specifying who can perform certain actions with respect to a Document| |
+|R11|The ICL MUST provide some mechanism for invalidating a Document| Link to message API |
+|R12|The ICL MUST provide some mechanism for specifying who can perform certain actions with respect to a Document| Link to access control rules|
+|R13|The ICL SHOULD allow any blockchgain technology to be used|link to technology plug in architecture|
+|R14|The ICL MUST allow transactions to be written individually or in bulk|link to wire protocol / side tree architecture|
+|R15|The ICL MUST provide a consistent means to support any G2G business process| link to semantic layer architecture|
+
+# The ICL Specifications
+
+## Architecture Overview
+
+## Message API
+
+## Routing API
+
+## Repository API
+
+# The ICL Semantic Layer
+
+## Semantic Overview
+
+## Origin Data Example
+
+# The ICL Technology Abstraction
+
+## Ethereum Mapping
+
+## Hyperledger Fabric Mapping
+
+## Hyperledger Sawtooth Mapping
+
+
+
 
