@@ -2,14 +2,12 @@
 
 [Specification](http://edi3.org/specs/edi3-icl/master/) (latest working draft)
 
-[Project Administration](https://github.com/edi3/edi3-icl/wiki) (meeting minutes etc)
+[Project administration](https://github.com/edi3/edi3-icl/wiki) (meeting minutes etc)
 
-[Discussion Channel](https://edi3.slack.com/messages/CG8Q8B7F1)
+[Discussion channel](https://edi3.slack.com/messages/CG8Q8B7F1) (slack channel)
 
-Open source reference implementation: 
-
-* [trustbridge](https://github.com/trustbridge)
+[Reference implementation](https://github.com/trustbridge) (open source)
 
 Test suite: Not yet available
 
-Live test endpoint: Note yet available
+Live test endpoint: Not yet available
