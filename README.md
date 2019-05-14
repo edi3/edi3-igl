@@ -1,14 +1,15 @@
 # edi3 Inter Customs Ledger Specification
 
-Specification: 
- * [Inter Customs Ledger Working Draft](http://edi3.org/specs/edi3-icl/develop/)
- * [Inter Customs Ledger Latest Release](http://edi3.org/specs/edi3-icl/master/)
+[Specification](http://edi3.org/specs/edi3-icl/master/) (latest working draft)
 
+[Project Administration](https://github.com/edi3/edi3-icl/wiki) (meeting minutes etc)
 
-Community discussion/support: [edi3.org](http://edi3.org)
+[Discussion Channel](https://edi3.slack.com/messages/CG8Q8B7F1)
 
 Open source reference implementation: 
 
-Test suite: 
+* [trustbridge](https://github.com/trustbridge)
 
-Live test endpoint: 
+Test suite: Not yet available
+
+Live test endpoint: Note yet available
