@@ -4,7 +4,7 @@
 
 [Project administration](https://github.com/edi3/edi3-icl/wiki) (meeting minutes etc)
 
-[Mainling List](https://groups.google.com/a/edi3.org/forum/#!forum/icl)
+[Mailing List](https://groups.google.com/a/edi3.org/forum/#!forum/icl)
 
 [Discussion channel](https://edi3.slack.com/messages/CG8Q8B7F1) (slack channel)
 
