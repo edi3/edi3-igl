@@ -30,9 +30,9 @@ This document describes a technical specification for the trusted transfer of cr
 * Trade documents can be notarised and verified with very high integrity against tampering or forgery.
 * Where appropriate (eg single use certificates), documents as digital assets can be transfered and acquitted follwing the physical asset movement.
 
-There is no expectation that a single uber-ledger supports all G2G transactions. A apecific ledger may service as few as two countries and may be limited to a single process (eg certificates of origin) or may service multiple coujntries and multiple processes. Therefore this specification supports the use of multiple different distributed ledgers (both public and private) by defining a standrdised "Message API" that allows users within a jurisdiction to interact with multiple ledgers via a simple interface.  
+There is no expectation that a single uber-ledger supports all G2G transactions. A apecific ledger may service as few as two countries and may be limited to a single process (eg certificates of origin and certificates of non-manipulation) or may service multiple coujntries and multiple processes. Therefore this specification supports the use of multiple different distributed ledgers (both public and private) by defining a standrdised protocol that allows users within a jurisdiction to interact with multiple ledgers via a simple interface.  
 
-This document uses Certificates of Origin as the guiding use case for the initial specification, however it is intended that the Inter Customs Ledger should be generic and allow for the transfer of any shipment related documentation between authorised agencies. 
+This document uses Certificates of Origin and Certificates of Non-Manipulation as the guiding use case for the initial specification, however it is intended that the Inter Customs Ledger should be generic and allow for the transfer of any shipment related documentation between authorised agencies. 
 
 ## Glossary
 
@@ -43,7 +43,7 @@ To-do : replace this section with a simple link to role definitions in the dicti
 |3PL| Third Party Logistics Provider (eg freight forwarders)|
 |Agent| Intermediaries such as customs agents|
 |Carrier| A provider of transport means/equiment such a shipping line or airline|
-|Certifying Body| An organisation that has been accredited to issue one or more certificate types - such as a chamber of commerce that may issue Certificates of Origin|
+|Certifying Body| An organisation that has been accredited to issue one or more certificate types - such as a chamber of commerce or government agency that may issue Certificates of Origin|
 |DLT| Distributed Ledger Technology, of which Blockchain is the most common example.|
 |Document | When capitalised in this document, this term refers to any document which gives authorisation for an importer or exporter to take some action (or be granted some further authority) with respect to an international shipment of goods. e.g. a Certificate of Origin, a Phytosanitary Certificate, an Export Declaration, etc| 
 |Exporter|Business or individual that is the seller of internationally traded goods |
