@@ -44,6 +44,7 @@ To-do : replace this section with a simple link to role definitions in the dicti
 |Agent| Intermediaries such as customs agents|
 |Carrier| A provider of transport means/equiment such a shipping line or airline|
 |Certifying Body| An organisation that has been accredited to issue one or more certificate types - such as a chamber of commerce that may issue Certificates of Origin|
+|DLT| Distributed Ledger Technology, of which Blockchain is the most common example.|
 |Document | When capitalised in this document, this term refers to any document which gives authorisation for an importer or exporter to take some action (or be granted some further authority) with respect to an international shipment of goods. e.g. a Certificate of Origin, a Phytosanitary Certificate, an Export Declaration, etc| 
 |Exporter|Business or individual that is the seller of internationally traded goods |
 |ICL Node|A device on an ICL network which has full visibility of the entire ledger and contriibutes to the integrity of the ledger by implementing a Consensus Algorithm. Typically operated by a national regulator|
@@ -79,8 +80,6 @@ The future state diagram shows the relationship between the ICL and three other 
 * National digital identity schemes are emerging in many jursdictions are provide a way for businesses and individuals in a country to prove their identity to any government agency and to any authorised non-government entity. Business identity schemes are typically linked to public tax registration numbers. Individual identities may be linked to a business identity and will normally include the idea of identity assurance levels which indicate the degree of identity integrity attached to the token holder. This means, for example, that a certificate of origin provided by an exporter to their local customs authority (possibly via a single window) can be passed to the importing authority together with a high integrity identity claim. In this way, the ICL is essentially an international "trust bridge" between national identity schemes.
 * Commercial trade data platforms/pipelines are an emerging capability that seek to provide their customers with and-to-end supply chain visibility and management. They are essentially multi-source data aggregators and their scope usually includes some or all of trade, transport, financial, and regulatory data. The data managed by commerciasl pipleines is not only traditional trade documents (invoices, bills of lading etc) but also IoT streams like data feeds from instrumented smart containers. These platforms can provide significant value to their stakeholders and have a scope much larger than G2G data sharing. The ICL complements these commercial services and does not compete with them.
 
-
-# High Level Requirements
 
 ## Architectural Principles
 
@@ -119,19 +118,33 @@ The future state diagram shows the relationship between the ICL and three other 
 
 ## Architecture Overview
 
+The ICL Specification comprises 5 standard APIs as shown (in yellow) in the conceptual architecture diagram below. The APIs are organised into three layers
+
+* The Channels layer represents the collection of compliant DLT solutions that can be used for cross-border document exchange. As an increasing number of DLT vendors support the channel API specification, so there will be an increasing number of channel options for ICL nodes.
+* The ICL node layer represents the compomnents deployed by any country that wishes to participate in the inter-customs ledger. It provides an abstraction above specific DLT channels but remains agnoistic of specific cross-border business processes such as origin data exchange. This layer provides one or more secure document repositories (Document API) and implements the routing logic for recording channel transactions (Message API) and listening for relevant channel events (Subscriptions API).
+* The applications layer represents any platform that will make use of the ICL for cross border exchange. THis is the business process specific layer and will typically be represented by single window applications or other trade & logistics applications. The diagramn shows a CoO (Certifcate of Origin) API as an example but this lay coiuld support any trade document (invoice, Vill of Lading, etc).
+
+![API Architecture](ICL_API_Architecture.png)
+
+ICL node implementations need access to routing information such as "to send document type X from Country A to Country B, use DLT channel 2".  Although this could be hard-coded in each node, as the number of countries, channels, and document types increases, it is likely that a centralised channel directory will emerge (perhaps operated by the UN) that maintains routing rules in one place for any ICL node to access via a standard API.
+
 ## Message API
+
+## Subscriptions API
+
+## Channel API
+
+## Document API
 
 ## Routing API
 
-## Repository API
-
-# The ICL Semantic Layer
+# ICL Business Applications
 
 ## Semantic Overview
 
 ## Origin Data Example
 
-# The ICL Technology Abstraction
+# ICL Distributed Ledger Channels
 
 ## Ethereum Mapping
 
@@ -139,6 +152,6 @@ The future state diagram shows the relationship between the ICL and three other 
 
 ## Hyperledger Sawtooth Mapping
 
-
+# ICL Security Architecture
 
 
