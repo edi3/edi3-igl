@@ -56,13 +56,15 @@ To-do : replace this section with a simple link to role definitions in the dicti
 
 There have been a number of recent projects which use blockchain to implement a system which allows the validation of Certifiate of Origin issued under some Free Trade Agreement. Singapore and Kenya have both worked with industry parter vCargo Cloud to implement blockchain Certificate of Origin solutions. The first Certificate of Origin for a shipment from the UK was issued by {who?} in {month?} 2018 and in {when?} the United States were looking into the use of blockchain to validate Certificates of Origin for shipments made under {old agreements?}. These projects have highlighted the necessity for digital, blockchain based solutions to exist alongside paper based processes in the short term, requiring the continued existance of some mechanism for validating the authenticity of a paper certificate. 
 
-Before the prevalence of distributed ledger technology, the common approach to providing for assurance as to the validity of a Document was largely achieved with the idea of a hub. There are a number of implementations of this approach which may be instructive: ICC Certificate of Origin verification website, EPIX, IPCC ePhyto hub, etc... 
+Before the prevalence of distributed ledger technology, the common approach to providing for assurance as to the validity of a Document was largely achieved with the idea of a hub. There are a number of implementations of this approach which may be instructive: ICC Certificate of Origin verification website, EPIX, IPCC ePhyto hub, etc.  However, solutoins based on global hubs typically face difficulties finding a funding model and are often honey-pots of information for security attacks. Consequently, national regulators are increasingly reluctant to depend on centralised solutions.
 
 The link below provides a number of resources which attempt to give an overview of the landscape of blockchain based projects related to both Certificates of Origin and International trade in general
 
 [Survey of Blockchain Based Approaches to Managing International Trade Documentation](precedents.md)
 
-## Introduction
+# ICL Requirements
+
+## Business Context
 
 International trade clearance procedures require a number of documents to be presented to satisfy the requirements of a variety of agreements. For example, in order for an importer to gain preferential tariff treatment under a Free Trade Agreement, the importer must present a valid Certificate of Origin (issued to the exporter) which states that the goods being imported qualify as originating in the country which is party to the agreement. These processes are managed largely by the transfer of paper documents which are subject to loss, alteration and forgery. 
 
@@ -114,7 +116,7 @@ The future state diagram shows the relationship between the ICL and three other 
 |R14|The ICL MUST allow transactions to be written individually or in bulk|link to wire protocol / side tree architecture|
 |R15|The ICL MUST provide a consistent means to support any G2G business process| link to semantic layer architecture|
 
-# The ICL Specifications
+# ICL Technical Specification
 
 ## Architecture Overview
 
@@ -126,17 +128,124 @@ The ICL Specification comprises 5 standard APIs as shown (in yellow) in the conc
 
 ![API Architecture](ICL_API_Architecture.png)
 
-ICL node implementations need access to routing information such as "to send document type X from Country A to Country B, use DLT channel 2".  Although this could be hard-coded in each node, as the number of countries, channels, and document types increases, it is likely that a centralised channel directory will emerge (perhaps operated by the UN) that maintains routing rules in one place for any ICL node to access via a standard API.
+ICL node implementations need access to routing information such as "to send document type X from Country A to Country B, use DLT channel 2".  Initially it is expected that this information is managed independently in each node.  However as the number of countries, channels, and document types increases, there may be a requirement to manage routing information in a consistent way (which could be a centralised service or could be itself a decentralised ledger).
 
-## Message API
+## ICL API Specifications
 
-## Subscriptions API
+### Overall Sequence Diagram
 
-## Channel API
+To-Do: Insert a sequence diagram here.  But the flow is something like:
 
-## Document API
+Preconditions
 
-## Routing API
+* Two or more countries (via one or more national or state regulators) have agreed on a specific ICL channel for one or more document types. 
+* Each authroised party (ie regulator) has also made available the repository URLs for each document type that they will host.
+* public keys of authorised operators have been exchanged and mapped to persistent identities
+* One or more business applications (eg trade single windows) in each country have integrated with theire respective national ICL nodes for the purposes of trusted cross-border exchange of documents.
+
+Cross-Border Sequence
+
+The process starts when participant in the sender country uses a local business application (eg single window) to create a business document (eg a Certificate of Origin).
+
+# Sender country authority POSTS a document to the /documents API, which stores the document and returns a unique [multi-hash](https://github.com/multiformats/multihash) ID.
+# Sender country POSTS a message to the /messages Tx API from (sender) to (receiver) as a subject-predicate-object triple where each component of the triple conforms with a well defined vocabulary (ie the UN/CEFACT semantic library).  The object is the multi-hash of the document to be sent.
+# ICL node POSTS the message to the correct distributed ledger channel via the channel API and, if the DLT channel successfully adda a new block to the chain, then a success response is returned to the ICL node.
+# The ICL node updates the document api with access control information POST /documents/{id}/acl where acl is a list of recipients of the DLT message. Essentially the access control rule is "if we successfully sent you a message then you are allowed to access the corresponding document".
+# The receiving country is notified of a new message via the Message Rx API. 
+# The receiving country makes an authenticated request to the document API of the repository that hosts the document type that was received.  The document is retreived, the multi-hash recomputed and compared the that recorded on the ledger.  
+# The validated document is available to any locally authorised users of the recipient country business application layer.
+
+A user of a business application in the receiving country completes a hiogher level business process that is specific to the document type.  For example a customs authority may acquit a certificate of origin once goods have been received. The acquittal is also an ICL message that is sent back to the originator country.  The ICL network is essentially a high integrioty trusted pipe that can exchange any document and is not aware of the specifics of higher level business processes.
+
+
+### Document API & ACL
+
+To-Do: Flesh this out.  But will be something like this:
+
+Initial document POST
+
+```
+POST api.repository.gov.xx/documents/{binary file} 
+
+returns 200 OK and multi-hash of file - eg "QmQtYtUS7K1AdKjbuMsmPmPGDLaKL38M5HYwqxW9RKW49n"
+```
+
+Update ACL after successful message send
+
+```
+POST api.repository.gov.xx/documents/{multi-hash}/acl/{identifier of message recipient}
+
+returns 200 OK 
+```
+
+Sometime later the recipient country retreives the document
+
+```
+GET api.repository.gov.xx/documents/{multi-hash}
+
+returns 200 OK and the binary file identified by the multi-hash, assuming the requester is authenticated (ie presents a valid identity token) and authorised (ie the identity in the token is in the document API ACL for the specific document.)
+```
+
+### Message Tx/Rx API
+
+Once a document has been POSTed to the document API and a multi-hash is returned then POSTing the message to the sender country Message Tx API might look like this:
+
+```
+POST api.icl.gov.xx/messages/{message}
+
+where {message} is something like:
+{
+	"sender": "homeaffairs.gov.au", 
+	"receiver": "customs.gov.cn", 
+	"subject": "au.gov:abn:123456789", 
+	"obj": "QmQtYtUS7K1AdKjbuMsmPmPGDLaKL38M5HYwqxW9RKW49n", 
+	"predicate": "UN.CEFACT.Regulatory.CertificateOfOrigin.created"
+}
+
+response is 200 OK if the message is successfully processed by the relevant DLT channel
+```
+
+And the receiving country Message Rx API would get
+
+```
+something similar
+```
+
+### Subscriptions API
+
+We think subscriptions should just use [W3C WebSub](https://www.w3.org/TR/websub/) - but will need to say something about standard WebSub event format.
+
+### Channel API
+
+After some routing discovery, the ICL node must submit the message to the relevant DLT channel.
+
+```
+To be done
+```
+
+## ICL Security Architecture
+
+There are two very distinct layers of users and corresponding identity assurance models.
+
+* ICL node users (ie users of the Document & Message APIs) are a small number of regulatory authorities (typically customs) in each country. These are identified as part of an out-of-bounds key exchange mechanism. Most likely these will be extneded validation SSL certificates that identify the domain of the participant agency - eg homeaffairs.gov.au.
+* In country participants (ie users of the application layer APIs) are a large number of organisations (or individuals) within a country that are creators or consumers of cross boder documents. These users are authenticated using an in-country identity verification regime such as Australian business authentication framework (VANguard). The identites contained in these in-country identity frameworks may be the {subject} value of the subject-predicate-object triple of the message API.
+
+### ICL Node User Identity
+
+to-do : more details here
+
+### In Country Identity Schemes
+
+to-do: more details here
+
+## ICL Distributed Ledger Channels
+
+### Ethereum Mapping
+
+### Hyperledger Fabric Mapping
+
+### Hyperledger Sawtooth Mapping
+
 
 # ICL Business Applications
 
@@ -144,14 +253,7 @@ ICL node implementations need access to routing information such as "to send doc
 
 ## Origin Data Example
 
-# ICL Distributed Ledger Channels
 
-## Ethereum Mapping
 
-## Hyperledger Fabric Mapping
-
-## Hyperledger Sawtooth Mapping
-
-# ICL Security Architecture
 
 
