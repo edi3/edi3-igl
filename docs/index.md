@@ -42,6 +42,7 @@ To-do : replace this section with a simple link to role definitions in the dicti
 |----|-----------|
 |3PL| Third Party Logistics Provider (eg freight forwarders)|
 |Agent| Intermediaries such as customs agents|
+|API|Application Programming Interface|
 |Carrier| A provider of transport means/equiment such a shipping line or airline|
 |Certifying Body| An organisation that has been accredited to issue one or more certificate types - such as a chamber of commerce or government agency that may issue Certificates of Origin|
 |DLT| Distributed Ledger Technology, of which Blockchain is the most common example.|
@@ -130,9 +131,13 @@ The ICL Specification comprises 5 standard APIs as shown (in yellow) in the conc
 
 ICL node implementations need access to routing information such as "to send document type X from Country A to Country B, use DLT channel 2".  Initially it is expected that this information is managed independently in each node.  However as the number of countries, channels, and document types increases, there may be a requirement to manage routing information in a consistent way (which could be a centralised service or could be itself a decentralised ledger). Also, as countries make new arrangements (eg ceprecate one DLT channel in lieu of another) there will be a need to orchestrate the change without incurring downtime.
 
-## ICL API Specifications
+## Information and Security Architecture
 
-### Overall Sequence Diagram
+To-Do : Add some words about this diagram
+
+![Information & Security Architecture](InformationAndSecurityArchitecture.png)
+
+## Generic Process Flow
 
 To-Do: Insert a sequence diagram here.  But the flow is something like:
 
@@ -157,12 +162,14 @@ The process starts when participant in the sender country uses a local business 
 
 A user of a business application in the receiving country completes a hiogher level business process that is specific to the document type.  For example a customs authority may acquit a certificate of origin once goods have been received. The acquittal is also an ICL message that is sent back to the originator country.  The ICL network is essentially a high integrioty trusted pipe that can exchange any document and is not aware of the specifics of higher level business processes.
 
+## ICL API Specifications
+
 
 ### Document API & ACL
 
 To-Do: Flesh this out.  But will be something like this:
 
-Initial document POST
+B2G Binary Document POST
 
 ```
 POST api.repository.gov.xx/documents/{binary file} 
@@ -170,15 +177,30 @@ POST api.repository.gov.xx/documents/{binary file}
 returns 200 OK and multi-hash of file - eg "QmQtYtUS7K1AdKjbuMsmPmPGDLaKL38M5HYwqxW9RKW49n"
 ```
 
-Update ACL after successful message send
+B2G JSON-LD Message POST
 
 ```
-POST api.repository.gov.xx/documents/{multi-hash}/acl/{identifier of message recipient}
+POST api.repository.gov.xx/metadata/{json file} 
+
+returns 201 OK and multi-hash of file - eg "QEiCcvAfD+ZFyWDajqipYHKICkZiqQgudmbwOEx2fPiy+Rw"
+```
+
+B2G Message Status GET
+```
+GET api.repository.gov.xx/messages/{message Multi-hash} 
+
+Returns status of blockchain consensus / commit. Sender can also subscribe to be notified.
+```
+
+G2G Update ACL after successful message send
+
+```
+POST api.repository.gov.xx/messages/{multi-hash}/acl/{identifier of message recipient}
 
 returns 200 OK 
 ```
 
-Sometime later the recipient country retreives the document
+G2G Sometime later the recipient country retreives the document
 
 ```
 GET api.repository.gov.xx/documents/{multi-hash}
@@ -186,7 +208,7 @@ GET api.repository.gov.xx/documents/{multi-hash}
 returns 200 OK and the binary file identified by the multi-hash, assuming the requester is authenticated (ie presents a valid identity token) and authorised (ie the identity in the token is in the document API ACL for the specific document.)
 ```
 
-### Message Tx/Rx API
+### Channel Tx/Rx API
 
 Once a document has been POSTed to the document API and a multi-hash is returned then POSTing the message to the sender country Message Tx API might look like this:
 
