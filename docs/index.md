@@ -191,7 +191,7 @@ Assuming that a channel has been established as per the governance model then
 
 The sequence diagram below elaborates on the detailed interactions between IGL node components and IGL channels that are not shown on the client equence diagram.
 
-[IGL node sequence](IGLNodeSequence.png)
+![IGL node sequence](IGLNodeSequence.png)
 
 Assuming that public keys of authorised node operators have been exchanged and mapped to persistent identities then 
 
@@ -213,7 +213,7 @@ Assuming that public keys of authorised node operators have been exchanged and m
 
 ### Message API
 
-[Message API](IGLMessageAPI.png)
+![Message API](IGLMessageAPI.png)
 
 to-do : document this
 
