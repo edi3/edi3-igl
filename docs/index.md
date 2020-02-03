@@ -163,7 +163,7 @@ Identity providers and node operators SHOULD reference the accrediation framewor
 
 A typical IGL node will comprise the high level componments illustrated in the diagram below.
 
-![IGL Node Components](IGL Node.png)
+![IGL Node Components](IGLNodeComponents.png)
 
 * An IGL worker exposes the Message API and is reasponsible to process IGL messages including secure document storage, routing the the relevant IGL channel, and communicating events to the event manager.
 * A document manager exposes the document API and is responsible for the secure storage of documents (both structured data and binaries) that are referenced by a message on a channel. 
@@ -175,7 +175,7 @@ A typical IGL node will comprise the high level componments illustrated in the d
 
 The high level sequence flow for clinet system interactions with IGL nodes is shown below. Detailed interactions between node components and with IGL channels are not shown.
 
-![IGL client sequence](IGL end-to-end Interaction.png)
+![IGL client sequence](IGLClientSequence.png)
 
 Assuming that a channel has been established as per the governance model then
 
@@ -191,7 +191,7 @@ Assuming that a channel has been established as per the governance model then
 
 The sequence diagram below elaborates on the detailed interactions between IGL node components and IGL channels that are not shown on the client equence diagram.
 
-[IGL node sequence](IGL Node Transaction.png)
+[IGL node sequence](IGLNodeSequence.png)
 
 Assuming that public keys of authorised node operators have been exchanged and mapped to persistent identities then 
 
@@ -213,7 +213,7 @@ Assuming that public keys of authorised node operators have been exchanged and m
 
 ### Message API
 
-[Message API](Message API.png)
+[Message API](IGLMessageAPI.png)
 
 to-do : document this
 
