@@ -100,7 +100,7 @@ The future state diagram shows the relationship between the IGL and three other 
 |R6|The IGL SHOULD NOT assume that the user knows which ledger and which protocol to use in order to exchange a specific document type between two countries.| Link to Routing API |
 |R7|Any Regulator SHOULD be able to participate in the IGL by hosting an IGL Message API that integrates with one or more ledgers| link to participation rules|
 |R8|Participating in the network by hosting a Message API SHOULD NOT automatically grant access to the content of a document|link to access control rules |
-|R9|The IGL MUST provide a mechanism for preventing an importer or exporter from re-using a document which is intended to have a single use|Link to smart contract patterns |
+|R9|The IGL SHOULD provide an extension mechanism to allow smart contract to be defined where appropriate for the business context. |Link to smart contract patterns |
 |R10|The IGL MUST provide some mechanism for asserting the validity of a document presented by an importer or exporter | Link to notary / verification API|
 |R11|The IGL MUST provide some mechanism for invalidating a Document| Link to message API |
 |R12|The IGL MUST provide some mechanism for specifying who can perform certain actions with respect to a Document| Link to access control rules|
