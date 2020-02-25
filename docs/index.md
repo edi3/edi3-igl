@@ -107,6 +107,7 @@ The future state diagram shows the relationship between the IGL and three other 
 |R13|The IGL SHOULD allow any blockchgain technology to be used|link to technology plug in architecture|
 |R14|The IGL MUST allow transactions to be written individually or in bulk|link to wire protocol / side tree architecture|
 |R15|The IGL MUST provide a consistent means to support any G2G business process| link to semantic layer architecture|
+|R16|The IGL architecture MUST provide a scalability mechanism to support the volumes that may be required for the world's largest economies. Up to 1 billion transactions per day| link to scalability architecture|
 
 # IGL Technical Specification
 
@@ -254,16 +255,61 @@ In country IDP
 to-do: more detrails about claims etc
 
 
-# IGL Distributed Ledger Channels
+## Smart Contracts
 
-### Ethereum Mapping
+A "Smart Contract" allows the encoding of IGL channel specific business rules into the ledger that allows transactions to be verified aginst the rules. Smart cotnracts can facilitate automated and verifiable regulatory compliance. 
 
-### Hyperledger Sawtooth Mapping
+Although an IGL channel does not require a "smart contract" there are likely to be cases where there will be value in encoding compliance rules into the ledger transaction. 
+
+Different ledgher technologies have different technical representations of these rules. Ethereum smart contracts are written in solidity code. Hyperledger Fabric smart contracts are written as chain code in the Go language.  
+
+### Abstract Model
+
+In order to support re-use and consistency in the implmenentation of smart contracts, this specification defines an inheritance hierarchy for smart contracts. 
+
+![Smart Contracts](ContractsArchitecture.png)
+
+### Legal Stakeholders
+
+The legal stakeholders in IGL smart contract code are identified using:
+
+* A type code - drawn from the UN/CEFACT semantic library and represented as a JSON-LD IRI
+* An entity identifier - which MUST be a verifiable identity from an accredited IDP in the country in which the entity is registered.
+
+### Legal Terms
+
+Legal terms in IGL smart contracts should also be drawn from a standard dictionary such as the UN/CEFACT semantic library and MUST be represented as a JSON-LD IRI
+
+## Performance & Scalability
+
+Blockchain technology can become prohibitively slow and/or expensive at very high volumes. An IGL node operating in a large economy may need to process a very high volume of transacitons. The IGL should be able to handle high volumes without significant perforamance degradation or cost increases. A benchmark colume target is one billion transactions per day. There are two approaches to increasing volumes on distributed ledegrs without significant performance loss.
+
+* The Side-tree is essentially a batch protocol where an arbitrary number of transactions are composed into a Merkel DAG (Directed Acyclic Graph) where each node in the tree contains the hash of transactions at lower levels. Only the top level root of the tree is written to the chain but all transactions inherit the integrity of the chain. 
+* The side-chain is essentially an independent fork to create a new chain that can include an arbitrary number of new blocks before the fork re-joins the main chain. Side chains are more complex than side trees but allow more dynamic rules (transaction verifications) and can include new stakeholders as side chain node operators that are not part of the main chain.
+
+The combination of performacne requirements and channel specific rule/validation requirements leads to a decision tree
+
+![performance decision tree](ScalabilityModel.png)
 
 
-# IGL Business Applications
+### Merkel DAG Trees
 
-## Certificate of Origin
+
+### Side Chains
+
+
+
+
+
+# IGL Distributed Ledger Technology Implementations
+
+
+## Ethereum 
+
+
+## Hyperledger Sawtooth 
+
+
 
 
 
