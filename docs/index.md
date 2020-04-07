@@ -218,19 +218,17 @@ Assuming that public keys of authorised node operators have been exchanged and m
 
 to-do : document this
 
+### Channel Registry API
+
+![ChannelSpec](ChannelSpecification.png)
+
 ### Document API & ACL
 
 To-Do : document this
 
-### Channel Registry API
-
-To-Do : document this
-
-
 ### Subscriptions API
 
 We think subscriptions should just use [W3C WebSub](https://www.w3.org/TR/websub/) - but will need to say something about standard WebSub event format.
-
 
 ## Semantic Model
 
