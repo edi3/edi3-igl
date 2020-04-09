@@ -220,7 +220,16 @@ to-do : document this
 
 ### Channel Registry API
 
+The channel registry supports the query of channels on an IGL node channel registry.  
+
+* Query operations SHOULD be open to public unauthenticated clients. 
+* A common public use case is for a client system to determine what message types may be sent to which countries using the node. 
+* An IGL node MAY choose to hide the existence of some channel from pubkuc queries.
+
 ![ChannelSpec](ChannelSpecification.png)
+
+
+
 
 ### Document API & ACL
 
