@@ -217,6 +217,7 @@ Assuming that public keys of authorised node operators have been exchanged and m
 ![Message API](IGLMessageAPI.png)
 
 to-do : document this
+to-do : add swagegr spec
 
 ### Channel Registry API
 
@@ -224,11 +225,12 @@ The channel registry supports the query of channels on an IGL node channel regis
 
 * Query operations SHOULD be open to public unauthenticated clients. 
 * A common public use case is for a client system to determine what message types may be sent to which countries using the node. 
-* An IGL node MAY choose to hide the existence of some channel from pubkuc queries.
+* An IGL node MAY choose to hide the existence of some channels from pubkuc queries.
 
 ![ChannelSpec](ChannelSpecification.png)
 
-
+to-do : document this
+to-do : add swagegr spec
 
 
 ### Document API & ACL
