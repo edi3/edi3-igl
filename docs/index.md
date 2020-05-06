@@ -212,34 +212,84 @@ Assuming that public keys of authorised node operators have been exchanged and m
 
 ## API Specifications
 
+There are five API specifications that define the standard interfaces provided by any IGL node.
+
+### Document API
+
+The document API is used by authorised IGL clients to submit cross border regulatory or trade documents to an IGL node. The document API is used to submit documents **before** invoking the message API to advise the other country of the existance of a new document.
+The document API is also used by receiving jurisdictions to retreive documents that are referenced by an IGL message.
+
+![Document API](DocumentAPI.png)
+
+An IGL document MUST conform to the API schema and so always includes:
+
+* A sender specified reference (typically a business identifier like an invoice number)
+* A human readable document name (eg "certificate of Origin")
+* The issuer ID (which must also be supported by an identity proof)
+* some structured data - using JSON-LD and conforming to a well undertood ontology (JSON-LD @context) that is supported by the IGL channel policy.
+* zero or more binary attachments
+* one or more [W3C Verifiable credential](https://www.w3.org/TR/vc-data-model/) proofs.  The mimimum is the identity proof for the issuer.
+
+The ID of the document is always the merkle hash of all binaries, proofs, and structured data that comprise the document.  If a document is updated with modified metadata, binaries, or proofs, then the new version will have a new merkel hash and an incremented version sequence number.
+
+```
+OpenAPI 3.0 Specifciation to be added here
+```
+
 ### Message API
 
-![Message API](IGLMessageAPI.png)
+The message API is used by authorised IGL clients to send messages to other countries via channels supported by the node. The messages may reference a previously submitted document using the merkel hash ID of the document as the "object" of the message.  
+
+![Message API](MessageAPI.png)
+
+IGL messages are essentially semantic triples (subject, predicate, object) that are sent from a sending jurisdiction to a receiving jurisdiction over an IGL channel that supports the predicate.  For example, for a ceritficate of origin sent from Australia to China, the message properties might be
+
+* Sender = AU
+* receiver = CN
+* predicate = "unece.un.org:coo:created" - defines the type of message (in this case that a certificate of origin has been created) - must be drawn from a well understood ontology and much match the channel policy.
+* subject = "chamber.com.au:chafta-coo:123" - defines the identity of the message and must be a unique IRI
+* object = a5c841c07663e6992389d27037369d4eb4972cc062f2b962ebadf8599b26fcbf - the merkel hash of the related document.
+
+Messages have a simple state lifecycle (pending, bundled, sent, delivered, failed, withdrawn)
+
+In some cases, channel policy may permit the transmission of additional related information about a message as a further set of semantic triples.  In this way, recipients can build semantic graphs of related data (eg certificate of origin 1234 is linked to consignment 5678 that is on voyage 9123)
+
+```
+OpenAPI 3.0 Specifciation to be added here
+```
+
+### Subscriptions API
+
+The subscriptions API allows IGL clients to be notiofed when there is a message for them.  The IGL subscriptions service will POST any IGL messages that match the subscription pattern to the subscribers callback API.
+
+![Subscription API](SubscriptionAPI.png)
+
+There are two type of subscribers
+* members of the regulated community - can subscribe to updates about messages they have sent (eg keep me updated about CoO number 123)
+* regulators - can subscribe to predicate topic streams (ie tell me about all CoOs).
+
+```
+OpenAPI 3.0 Specifciation to be added here
+```
+
+### Channel API
 
 to-do : document this
-to-do : add swagegr spec
+to-do : add swagger spec
 
-### Channel Registry API
+### Registry API
 
-The channel registry supports the query of channels on an IGL node channel registry.  
+The registry API supports the query of channels on an IGL node channel registry.  
 
 * Query operations SHOULD be open to public unauthenticated clients. 
 * A common public use case is for a client system to determine what message types may be sent to which countries using the node. 
 * An IGL node MAY choose to hide the existence of some channels from pubkuc queries.
 
-![ChannelSpec](ChannelSpecification.png)
+![Registry API](RegistryAPI.png)
 
-to-do : document this
-to-do : add swagegr spec
-
-
-### Document API & ACL
-
-To-Do : document this
-
-### Subscriptions API
-
-We think subscriptions should just use [W3C WebSub](https://www.w3.org/TR/websub/) - but will need to say something about standard WebSub event format.
+```
+OpenAPI 3.0 Specifciation to be added here
+```
 
 ## Semantic Model
 
