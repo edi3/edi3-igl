@@ -242,25 +242,45 @@ OpenAPI 3.0 Specifciation to be added here
 
 ## Semantic Model
 
-This section is all about the predicate (ie message type IRI) and it's relationship to supported document models/schema.
+An IGL message is a semantic triple
+
+* subject - typically the identifier of a thing  (eg certificate of origin #123)
+* predicate - a named relationship drawn froma  controlled vocabulary (eg unece.org:coo:created)
+* object - the thing itself (eg the derticate of origin document identified by the hash of the document)
+
+A number of related messages may be sent via the IGL, possibly by different parties in a jurisduiction.  The combination of the the messages allows the receiver node to construct a semantic graph or related entities.  
+
+[Semantic Graph](SemanticGraph.png)
+
+to do:  add table with specific examples of subject-object-predictates for the graph in the diagram.
 
 to-do: more details
 
 ## Security Architecture
 
-There are two very distinct layers of users and corresponding identity assurance models.
+There are different layers to the security mnodel for IGL as shownb in the diagram below
 
-### IGL Node Identity
+![Security Model](SecurityModel.png)
 
-Mutual SSL
+* Authorised Agencies maintain channel keys that represent their identity on a speciucl ledger channel (eg ethereum).  The ksy are provided to the node operator to whom the agency delegates authority to operate a channel.
+* G2G security between coiuntries (eg for document API access) is managed using mutual SSL to verify DNS domains of the participating authorised agencies (eg agencyA.gov.xx)
+* B2G security within a jurisdiction is managed using OAuth2 federated identity claims.
+
+## IGL Node-Channel security 
 
 to-do: more details
 
-### Client Identity 
+## IGL Node-Node (G2G) security
 
-In country IDP 
+to-do: more details
+
+### IGL client-Node (B2G) security
 
 to-do: more details about claims etc
+
+### IGL verifiable claims 
+
+to-do: more about verifiable claims
 
 ## Component Model
 
@@ -335,7 +355,7 @@ The combination of performance requirements and channel specific rule/validation
 ## Ethereum 
 
 
-## Hyperledger Sawtooth 
+## Hyperledger
 
 
 
