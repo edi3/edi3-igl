@@ -250,7 +250,7 @@ An IGL message is a semantic triple
 
 A number of related messages may be sent via the IGL, possibly by different parties in a jurisduiction.  The combination of the the messages allows the receiver node to construct a semantic graph or related entities.  
 
-[Semantic Graph](SemanticGraph.png)
+![Semantic Graph](SemanticGraph.png)
 
 to do:  add table with specific examples of subject-object-predictates for the graph in the diagram.
 
