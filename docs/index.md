@@ -1,5 +1,5 @@
 ---
-title: "edi3 Inter Customs Ledger 0.1.0 Specification"
+title: "edi3 Inter Goverment Ledger 0.1.0 Specification"
 specID: "IGL/1"
 status: "![raw](http://rfc.unprotocols.org/spec:2/COSS/raw.svg)"
 editors: "[Chris Gough](mailto:christopher.d.gough@gmail.com)"
@@ -32,7 +32,7 @@ This document describes a technical specification for the trusted transfer of cr
 
 There is no expectation that a single uber-ledger supports all G2G transactions. A specific ledger may service as few as two countries and may be limited to a single process (eg certificates of origin and certificates of non-manipulation) or may service multiple countries and multiple processes. Therefore this specification supports the use of multiple different distributed ledgers (both public and private) by defining a standardised protocol that allows users within a jurisdiction to interact with multiple ledgers via a simple interface.  
 
-This document uses Certificates of Origin and Certificates of Non-Manipulation as the guiding use case for the initial specification, however it is intended that the Inter Customs Ledger should be generic and allow for the transfer of any shipment related documentation between authorised agencies. 
+This document uses Certificates of Origin and Certificates of Non-Manipulation as the guiding use case for the initial specification, however it is intended that the Inter Goverment Ledger should be generic and allow for the transfer of any shipment related documentation between authorised agencies. 
 
 ## Glossary
 
@@ -64,7 +64,7 @@ International trade clearance procedures require a number of documents to be pre
 
 In many jurisdictions, significant digitisation progress has been made for interactions between the national regulators (eg customs) and the local regulated community (eg importers, exporters, etc). In Australia for example, 99% of customs documents are already lodged electronically. However there still remains a very significant amount of paper documents that support cross border trade. The majority of the paper documents fit the same pattern; they are issued by a party in the exporting country but required by the regulator of the importing country for goods clearance. One significant reason that paper has been difficult to replace is that there is no direct trust relationship that allows in importing regulator to confirm the identity of the document issuer in the exporting jurisdiction. 
 
-An Inter Customs Ledger (IGL) is proposed as an approach to the transfer of shipment related documents between customs agencies which is immediate, permanent and irrefutable.  The intercustoms ledger is essentially a trust bridge between national identity schemes - basically the importing regulator trusts the identity of the document issuer because the exporting regulator confirms the issuer identity.  
+An Inter Goverment Ledger (IGL) is proposed as an approach to the transfer of shipment related documents between customs agencies which is immediate, permanent and irrefutable.  The Inter Goverment ledger is essentially a trust bridge between national identity schemes - basically the importing regulator trusts the identity of the document issuer because the exporting regulator confirms the issuer identity.  
 
 ![digital flows](DocumentFlows_ToBe.png)
 
@@ -82,7 +82,7 @@ The future state diagram shows the relationship between the IGL and three other 
 |P1|Avoid bleeding any local regulatory complexities into cross-border processes| A strong separation between local complexity and cross border document exchange is essential for scalability. The IGL specification must be as simple as possible in order for update to scale. |
 |P2|Support multiple distributed ledger types & networks|A single global uber-ledger would need to pick a technology winner, would restrict the ability to introduce non breaking extensions, would present a high value attack target, and is unlikely to be supported by every nation.|
 |P3|Coexist nicely with paper processes|A switch from paper processes to native digital documents exchanged via IGL will not happen overnight. Therefore the IGL should add value to existing paper processes and should facilitate a simple and gradual transition from paper to native digital documents.|
-|P4|Leverage the unique position of national regulators| Customs authorities enjoy a unique position as the single convergence point for all imports to and exports from a country. That allows an intercustoms ledger to easily achieve complete coverage of bilateral or multilateral trading relationships.|
+|P4|Leverage the unique position of national regulators| Customs authorities enjoy a unique position as the single convergence point for all imports to and exports from a country. That allows an Inter Goverment ledger to easily achieve complete coverage of bilateral or multilateral trading relationships.|
 |P5|Complement rather than compete with commercial platforms|Regulators are not natural innovators. The ideal IGL will provide a non-competitive platform that leverages the position to regulators to the benefit of their constituents whilst allowing commercial innovation to flourish.|
 |P6|Do not *require* businesses to provide more than their local regulatory obligations demand.|There may be genuine value to business in using the IGL for cross border processes beyond the regulatory minimum but regulators cannot and should not demand it. Therefore, IGL implementations should define a clear value proposition for every document that exceeds the regulatory minimum.|
 |P7|Assume on-chain data is public| The IGL may be implemented on either public ledgers such as etherium or private ledgers such as hyperledger. In either case, it should be assumed that on-chain data is public since even a private ledger has multiple nodes, each of which has a has a full copy and the privacy of on-chain data cannot be guaranteed. |
